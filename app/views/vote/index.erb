@@ -3,6 +3,14 @@
 
 <!--# encoding: utf-8-->
 
+<h3>Import a CSV File</h3>
+  <%= form_tag import_vote_index_path, multipart: true do %>
+    <%= 
+
+file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
 
 
 <a href="/"><img id ="logo_who" src="/assets/sources/logo_ico.png" alt="logo"></a>
