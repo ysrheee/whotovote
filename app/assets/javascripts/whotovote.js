@@ -12,7 +12,7 @@ function wholeMap() {
         $('#whoTitle').html(regionName);
     });
     $('#sj').click(function() {
-        window.location.href = "https://whynotvote-nis.c9users.io/vote/who?regionId=151";
+        window.location.href = "/vote/who?regionId=151";
     })
 }
 
@@ -25,7 +25,7 @@ function setClick() {
     $('.rgnbtn').click(function(){
         var regionId = $(this).attr('id');
         //regionId를 포함한 쿼리를 보낸다.
-        window.location.href = "https://whynotvote-nis.c9users.io/vote/who?regionId="+regionId;
+        window.location.href = "/vote/who?regionId="+regionId;
         
     });
     $('.rgnbtn').hover(function(){
@@ -56,13 +56,13 @@ function buttonSet() {
     $('.region1').click(function(){
         var regionId =GetQueryStringParams('regionId');
         var electRegionID = $(this).attr('id').split('_')[1];
-        window.location.href = "https://whynotvote-nis.c9users.io/vote/who?regionId="+regionId +"&electRegionID="+ electRegionID;
+        window.location.href = "/vote/who?regionId="+regionId +"&electRegionID="+ electRegionID;
     });
     
     
     
-    var beforeLike = 'https://whynotvote-nis.c9users.io/assets/sources/like_0.png';
-    var afterLike = 'https://whynotvote-nis.c9users.io/assets/sources/like_1.png';
+    var beforeLike = '/assets/sources/like_0.png';
+    var afterLike = '/assets/sources/like_1.png';
     $('.rate1').click(function(){
         var c_id = $(this).parent().attr('id');
         $('#'+c_id+'> '+'.rate1').attr('src', afterLike);
@@ -115,8 +115,8 @@ function buttonSet() {
     });
 }
 function buttonSet2() {
-    var beforeLike = 'https://whynotvote-nis.c9users.io/assets/sources/like_0.png';
-    var afterLike = 'https://whynotvote-nis.c9users.io/assets/sources/like_1.png';
+    var beforeLike = '/assets/sources/like_0.png';
+    var afterLike = '/assets/sources/like_1.png';
     $('.rate1').click(function(){
         var c_id = $(this).parent().attr('id');
         $('#'+c_id+'> '+'.rate1').attr('src', afterLike);
