@@ -42,7 +42,7 @@
         <form name="c1_post" method="POST" action="/vote/comment_upload" onsubmit="return checkrate(this)">
             <div id="<%=candidate2.c_id%>" class="c1_comment">
                 <img id="c1_ico" src="/assets/sources/ico_like.png">평점 <% if candidate2.reply_num != 0 %>
-                                                                                                            <%= candidate2.rate_sum / candidate2.reply_num %>
+                                                                                                            <%= ((candidate2.rate_sum+0.0) / candidate2.reply_num) %>
                                                                                                             <% else %>
                                                                                                             0
                                                                                                             <% end %>점 &nbsp;

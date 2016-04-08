@@ -184,7 +184,7 @@ function checkrate(form) {
         
         if (getCookie(c_id) != '') {
             alert("한번만 평가할 수 있어5");
-            //return true;
+            return false;
         }
         
         setCookie(c_id,'true');
