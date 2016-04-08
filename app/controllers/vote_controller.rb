@@ -60,8 +60,8 @@ class VoteController < ApplicationController
     end
     
     def import
-    #Candidate.import(params[:file])
-    Region.import(params[:file])
+    Candidate.import(params[:file])
+    #Region.import(params[:file])
     redirect_to root_url, notice: "Products imported."
     end
     

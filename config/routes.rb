@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # resources :vote do
-  #   collection { post :import }
-  # end
+  resources :vote do
+    collection { post :import }
+  end
 
   root to: "vote#index"
   
