@@ -1,0 +1,546 @@
+$party1: rgb(200,0,30); /*새누리당*/
+$party2: rgb(50, 50,130); /*더불어민주당*/
+$party3: rgb(70,120,15); /*국민의당*/
+$party4: rgb(215, 163, 13); /*정의당*/
+$party5: rgb(85,178,31); /*녹색당*/
+$party6: rgb(99,124,200); /*민주연합당*/
+$party7: rgb(0, 255, 255); /*노동당*/
+$party8: rgb(0, 0, 0);
+
+$point_color: rgb(236,94,97);
+
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+body {
+    font-family: 'Hanna', serif;
+}
+
+a,
+a:visited,
+a:link,
+a:active {
+    color: black;
+    text-decoration: none;
+    cursor: auto;
+}
+
+a:hover {
+    color: $point_color;
+}
+
+textarea:focus, input:focus, button:focus{
+  outline: 0;
+}
+
+
+#logo_who {
+    position: absolute;
+    right:15px;
+}
+
+#vote_time {
+    position:fixed;
+    bottom:15px;
+    left:15px;
+    font-weight :800;
+    font-size:25pt;
+    text-align:left;
+}
+
+
+#whoTitle {
+    font-Size:35pt;
+    margin: 15px 10px 15px 10px;
+}
+
+/****************/
+
+#region_list {
+    position:absolute;
+    top:100px;
+    width:300px;
+    height:80vh;
+    margin: 0px 10px 0px 10px;
+}
+
+.region1 {
+    position:relative;
+    top:0px;
+    width:120px;
+    height:200px;
+    padding: 0px 5px 0px 5px;
+    display:inline-block;
+}
+
+.clicked > h2 {
+    color: $point_color;
+}
+
+.region1 h2:hover {
+    color:$point_color;
+}
+
+.region1 > h2 {
+    margin: 10px 0px 10px 0px;
+    cursor:pointer;
+}
+.region1 > div {
+    position:relative;
+    height:150px;
+    overflow-y:scroll;
+}
+
+.region1 > div::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px;
+}
+.region1 > div::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+/*****************/
+#candidate_list {
+    position:absolute;
+    top:0px;
+    left:350px;
+    margin: 0px 10px 0px 10px;
+}
+
+#can_pro {
+    font-size:10pt;
+    margin-bottom:10px;
+}
+
+.candidate1 {
+    width:450px;
+    height:250px;
+    border: 1px solid $party8;
+    display: inline-block;
+    margin: 0 10px 20px 10px;
+}
+
+.p1 {
+    border: 1px solid $party1;
+}
+
+.p2 {
+    border: 1px solid $party2;
+}
+
+.p3 {
+    border: 1px solid $party3;
+}
+
+.p4 {
+    border: 1px solid $party4;
+}
+
+
+
+#can_photo {
+    width:120px;
+}
+
+#c1_box {
+    position: relative;
+    width: 420px;
+    margin: 15px;
+}
+
+#paper_img {
+    width:20px;
+    position: relative;
+    top: 3px;
+}
+
+#c1_box div{
+    font-size: 25pt;
+    font-weight : 200;
+    width: 280px;
+    float: right;
+}
+
+#c1_name {
+    position: relative;
+    top:-5px;
+}
+
+.party {
+    font-size:15pt;
+    font-weight :200;
+    color: $party8;
+}
+
+.partyname1 {
+    color: $party1;
+}
+
+.partyname2 {
+    color: $party2;
+}
+
+.partyname3 {
+    color: $party3;
+}
+
+.partyname4 {
+    color: $party4;
+}
+
+#birth {
+    font-size:12pt;
+    font-weight :200;
+}
+
+#c1_check {
+    position:relative;
+    top:25px;
+}
+
+#c1_check div {
+    width:90px;
+    font-size : 10pt;
+    font-weight : 200;
+    text-align : center;
+    display:inline-block;
+}
+
+#check {
+    font-size: 12pt;
+    line-height:45px;
+}
+
+.c1_comment {
+    width:420px;
+    margin:15px;
+    border-top:1px solid $party8;
+    font-size:10pt;
+    font-weight :200;
+    line-height:21px;
+}
+
+.pt1 {
+    border-top: 1px solid $party1;
+}
+
+.pt2 {
+    border-top: 1px solid $party2;
+}
+
+.pt3 {
+    border-top: 1px solid $party3;
+}
+
+.pt4 {
+    border-top: 1px solid $party4;
+}
+
+#c1_more {
+    float: right;
+}
+
+#c1_ico {
+    position:relative;
+    top:5px;
+    margin-right:3px;
+}
+
+
+
+/****/
+
+#input_comment {
+    width:70%;
+    margin-top:5px;
+    margin-right:3px;
+    font-size:10pt;
+}
+
+.input_like {
+    position:relative;
+    top:3px;
+    // float:right;
+    cursor: pointer;
+}
+
+
+
+
+
+/**************************************************************************************************/
+
+
+
+#select-place {
+    width:100%;
+    z-index:90;
+}
+
+.rgbtn {
+    display : inline-block;
+    font-weight :200;
+    cursor:pointer;
+    font-size:15pt;
+
+    z-index:999999;
+    
+    width:200px;
+    height:80px;
+    border: 1px solid black;
+    
+    margin:10px;
+    
+    line-height:80px;
+    text-align:center;
+    
+    
+}
+
+.rgbtn:hover{
+    border: 1px solid $point_color;
+    color:$point_color;
+}
+
+#map-img {
+    //위치
+    position:absolute;
+    top:100px;
+    left:50px;
+    // left:50%;
+    // -ms-transform: translateX(-50%); /* IE 9 */
+    // -webkit-transform: translateX(-50%);/* Chrome, Safari, Opera */
+    // -o-transfrom: translateX(-50%);
+    // transform:translateX(-50%);
+    
+    //사이즈(반응형)
+    // width:100%;
+    // height:100vh;
+    // // width:500px;
+    // // height:800px;
+    background-image:url("sources/map_1/map_1_0.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+    width:25%;
+    height:100vh;
+    
+    
+    z-index:-9999;
+}
+
+
+#sl:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_1seoul.png");
+}
+
+#ic:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_2incheon.png");
+
+}
+#gg:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_3gyeonggi.png");
+
+}
+
+#gw:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_4kangwon.png");
+
+}
+
+#cb:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_5chn.png");
+
+}
+
+#cn:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_6chs.png");
+
+}
+
+#sj:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_7sejong.png");
+
+}
+
+#dj:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_8daejeon.png");
+
+}
+
+#kb:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_9kyn.png");
+
+}
+
+#kn:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_10kys.png");
+
+}
+
+#dg:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_11daegu.png");
+
+}
+
+#jb:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_12jen.png");
+
+}
+
+#jn:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_13jes.png");
+
+}
+
+#gj:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_14gwangju.png");
+
+}
+
+#us:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_15ulsan.png");
+
+}
+
+#bs:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_16busan.png");
+
+}
+#jj:hover ~ #map-img {
+    background-image:url("sources/map_1/map_1_17jeju.png");
+}
+
+
+///////////
+
+
+#regionmap {
+    width : 1200px;
+    position : relative;
+}
+
+#jongro {
+    position: relative;
+    left:300px;
+    top:-700px;
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//map2 pages
+
+
+#img_map2 {
+    position:absolute;
+    top: 100px;
+    left: 20px;
+    width:25%;
+}
+
+
+.rgnbtn {
+    // display : inline-block;
+    
+    display : inline-block;
+    font-weight :200;
+    cursor:pointer;
+    font-size:15pt;
+
+    z-index:999999;
+    
+    width:200px;
+    height:80px;
+    border: 1px solid black;
+    
+    margin:10px;
+    
+    line-height:80px;
+    text-align:center;
+}
+
+.btn_sm {
+    font-size:12pt;
+}
+
+.btn_ssm {
+    font-size:9pt;
+}
+
+#rg2_list {
+    // width:50%;
+    // text-align:center;
+    // position:relative;
+    // left:50%;
+    // -ms-transform: translateX(-50%); /* IE 9 */
+    // -webkit-transform: translateX(-50%);/* Chrome, Safari, Opera */
+    // -o-transfrom: translateX(-50%);
+    // transform:translateX(-50%);
+    
+    position:absolute;
+    top:82px;
+    margin-left:32%;
+}
+
+.rgnbtn:hover {
+    border:1px solid $point_color;
+    color:$point_color;
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+#box_comment {
+    width:920px;
+    position:relative;
+    left:50%;
+    -ms-transform: translateX(-50%); /* IE 9 */
+    -webkit-transform: translateX(-50%);/* Chrome, Safari, Opera */
+    -o-transfrom: translateX(-50%);
+    transform:translateX(-50%);
+}
+
+#candidate2 {
+    position:absolute;
+    width:450px;
+    height:250px;
+    border: 1px solid $party1;
+    display: inline-block;
+}
+
+#candidate_comment {
+    position:absolute;
+    width:420px;
+    border: 1px solid $party1;
+    left:470px;
+    padding:15px;
+}
+
+.input_like2 {
+    float:right;
+    margin-right:3px;
+}
+
+#reply1 {
+    margin-bottom:15px;
+    padding-bottom:15px;
+    border-bottom: 1px solid $party1;
+}
+
+#reply1 span {
+    font-size:10pt;
+    font-weight :200;
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+@media screen and (min-width: 1500px) {
+ 
+}
+

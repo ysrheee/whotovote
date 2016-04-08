@@ -1,0 +1,123 @@
+ <a href="https://whynotvote-nis.c9users.io"><img id ="logo_who" src="https://whynotvote-nis.c9users.io/assets/sources/logo_ico.png" alt="logo"></a>
+
+<h1 id="whoTitle"><%=@candidate2.first.do%>・<%=@candidate2.first.goo%></h1>
+
+<div id="vote_time">
+    <span style="font-size:24pt;">4월 13일 수요일</span><br>
+    06:00~18:00<br>
+    <span style="font-size:19pt;">사전투표 4월 8-9일</span>
+</div>
+
+
+
+<div id="box_comment">
+    <% @candidate2.each do |candidate2| %>
+    
+    <div id="candidate2">
+        <div id="c1_box">
+            <img id="can_photo" src="<%= candidate2.photo %>">   
+            <div id="c1_name">
+                <span id="party" class="party partyname<%= candidate2.num %>"><%= candidate2.party %></span>
+                <a id="can_pro" href="http://policy.nec.go.kr/svc/policy/PolicyViewDetail.do?applicant=<%= candidate2.photo.split('/').last.split('.')[1] %>" target="_blank">
+                    공약 및 후보자 기초정보 <img id="paper_img" src="https://whynotvote-nis.c9users.io/assets/sources/ico_paper.png">
+                </a><br>
+                <%= candidate2.num %> <%= candidate2.name %> <span id="birth"><%= candidate2.birth %> &nbsp; <%= candidate2.age %></span>
+                <div id="c1_check">
+                    <div>
+                        차별금지법 <br>
+                        <span id="check"><%= candidate2.disc %></span>
+                    </div>
+                    <div>
+                        테러방지법 <br>
+                        <span id="check"><%= candidate2.terror %></span>
+                    </div>
+                    <div>
+                        필리버스터 <br>
+                        <span id="check"> <%= candidate2.num_p %> </span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <form name="c1_post" method="POST" action="/vote/comment_upload" onsubmit="return checkrate(this)">
+            <div id="<%=candidate2.c_id%>" class="c1_comment">
+                <img id="c1_ico" src="https://whynotvote-nis.c9users.io/assets/sources/ico_like.png">평점 <% if candidate2.reply_num != 0 %>
+                                                                                                            <%= candidate2.rate_sum / candidate2.reply_num %>
+                                                                                                            <% else %>
+                                                                                                            0
+                                                                                                            <% end %>점 &nbsp;
+                <img id="c1_ico" src="https://whynotvote-nis.c9users.io/assets/sources/ico_reply.png">리플 <%= candidate2.reply_num %>개
+                <input id="input_comment" name="message" type="text" placeholder="후보에 대한 생각과 점수를 남겨주세요!">
+                <input class="rate" name="rate" type="hidden" value="-1" />
+                <input class="cand_id" name="candidateID" type="hidden" value="<%=candidate2.c_id%>" />
+                <img class="input_like rate1" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like rate2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like rate3" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like rate4" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like rate5" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+            </div>
+        </form>
+        <% end %>
+    </div>
+    
+    <div id="candidate_comment" onload="buttonSet2();">
+        
+        <% @comment.reverse.each do |x| %>
+        <div id="reply1">
+            <span><%= x.id %></span><br><br>
+            <%= x.message %><br>
+            
+            <% if x.rate == 1 %>
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+            <% end %>
+            
+            <% if x.rate == 2 %>
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+            <% end %>
+            
+            <% if x.rate == 3 %>
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+            <% end %>
+            
+            <% if x.rate == 4 %>
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_0.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+            <% end %>
+            
+            <% if x.rate == 5 %>
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+                <img class="input_like2" src="https://whynotvote-nis.c9users.io/assets/sources/like_1.png">
+            <% end %>
+            &nbsp;
+        </div>
+        <% end %>
+
+    </div>
+    
+    
+    
+</div>
+
+
+<script>
+    buttonSet2();
+</script>
+
