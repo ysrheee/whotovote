@@ -30,7 +30,7 @@ class VoteController < ApplicationController
     def index
     @candidates = Candidate.all
     @region = Region.all
-        # @candidates.each do |candidate|
+    #@candidates.each do |candidate|
     #         if candidate.terror == '1' 
     #             candidate.terror = '찬성'
     #             candidate.save
@@ -41,7 +41,7 @@ class VoteController < ApplicationController
     #             candidate.terror = '-'
     #             candidate.save
     #         end
-            
+    #        
     #         if candidate.disc == '1' 
     #             candidate.disc = '발의'
     #             candidate.save
@@ -49,19 +49,20 @@ class VoteController < ApplicationController
     #             candidate.disc = '-'
     #             candidate.save
     #         end
-            
+    #        
     #         if candidate.num_p == '100' 
     #             candidate.num_p = '-'
-    # #         else
-    # #             candidate.num_p += '번째'
-    #         candidate.save
+    #         else
+    #              candidate.num_p += '번째'
+    #         	candidate.save
     #         end
-        # end
+    #	end
+    
     end
     
     def import
-    Candidate.import(params[:file])
-    #Region.import(params[:file])
+    #Candidate.import(params[:file])
+    Region.import(params[:file])
     redirect_to root_url, notice: "Products imported."
     end
     
